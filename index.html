@@ -17,13 +17,34 @@
     </p>
 
     <label>From</label>
-    <input type="text" id="from" placeholder="Enter source">
+<select id="from">
+    <option value="Miyapur">Miyapur</option>
+    <option value="Ameerpet">Ameerpet</option>
+    <option value="LB Nagar">LB Nagar</option>
+    <option value="Uppal">Uppal</option>
+    <option value="Secunderabad">Secunderabad</option>
+    <option value="Hitech City">Hitech City</option>
+</select>
 
-    <label>To</label>
-    <input type="text" id="to" placeholder="Enter destination">
+<label>To</label>
+<select id="to">
+    <option value="Hitech City">Hitech City</option>
+    <option value="Miyapur">Miyapur</option>
+    <option value="Ameerpet">Ameerpet</option>
+    <option value="LB Nagar">LB Nagar</option>
+    <option value="Uppal">Uppal</option>
+    <option value="Secunderabad">Secunderabad</option>
+</select>
 
-    <label>Time</label>
-    <input type="time" id="time">
+<label>Time Slot</label>
+<select id="time">
+    <option value="08">Morning Peak (8 AM)</option>
+    <option value="09">Morning Peak (9 AM)</option>
+    <option value="12">Afternoon (12 PM)</option>
+    <option value="15">Afternoon (3 PM)</option>
+    <option value="18">Evening Peak (6 PM)</option>
+    <option value="20">Night (8 PM)</option>
+</select>
 
     <button onclick="predictDemand()">
         Predict Demand

@@ -1,22 +1,17 @@
 function predictDemand() {
 
-    let time = document.getElementById("time").value;
-
-    if(time === ""){
-        alert("Please select a time");
-        return;
-    }
-
-    let hour = parseInt(time.split(":")[0]);
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let hour = parseInt(document.getElementById("time").value);
 
     let demand = "";
     let color = "";
 
-    if((hour >= 7 && hour <= 10) || (hour >= 17 && hour <= 20)){
+    if(hour == 8 || hour == 9 || hour == 18){
         demand = "HIGH 🔴";
         color = "red";
     }
-    else if(hour >= 11 && hour <= 16){
+    else if(hour == 12 || hour == 15){
         demand = "MEDIUM 🟡";
         color = "orange";
     }
@@ -26,7 +21,9 @@ function predictDemand() {
     }
 
     document.getElementById("result").innerHTML = `
-        <h3>Demand Prediction</h3>
+        <h3>Route Analysis</h3>
+
+        <p><b>Route:</b> ${from} → ${to}</p>
 
         <p>
             <b>Demand Level:</b>
@@ -35,23 +32,19 @@ function predictDemand() {
             </span>
         </p>
 
-        <h4>Recommendations</h4>
+        <h4>AI Operational Recommendations</h4>
 
         <ul>
-            <li>Optimize Bus Allocation</li>
-            <li>Adjust Metro Frequency</li>
-            <li>Send Crowd Alerts to Commuters</li>
+            <li>Adjust fleet on ${from}–${to} corridor</li>
+            <li>Optimize metro frequency for peak hours</li>
+            <li>Deploy crowd monitoring at major stations</li>
         </ul>
 
-        <h4>Sustainability Impact</h4>
-
+        <h4>Commuter Impact</h4>
         <ul>
-            <li>Estimated CO₂ Saved: 1.4 kg</li>
-            <li>Estimated Fuel Saved: 0.6 L</li>
+            <li>Reduced waiting time</li>
+            <li>Less overcrowding</li>
+            <li>Better travel predictability</li>
         </ul>
-
-        <h4>Green Rewards</h4>
-
-        <p>⭐ +15 Green Points</p>
     `;
 }
