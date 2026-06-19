@@ -1,4 +1,4 @@
-# Smart Transit AI
+# GreenCommute AI
 
 An AI-powered public transport solution that predicts passenger demand and provides smart recommendations to improve commuting efficiency and encourage public transport usage.
 
